@@ -11,6 +11,7 @@
     "lorem-ipsum": "^2.0.3",
     "next": "10.0.3",
     "react": "17.0.1",
+    "react-audio-player": "^0.14.0",
     "react-dom": "17.0.1",
     "vivus": "^0.4.5"
   }

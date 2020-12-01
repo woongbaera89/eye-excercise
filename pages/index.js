@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+
 
 export default function Home() {
 
   const [zoom, setZoom] = useState(6);
   const [speed, setSpeed] = useState(6);
-  const [delay, setDelay] = useState(10);
+  const [delay, setDelay] = useState(15);
   const [count, setCount] = useState(0);
   const [loop, setLoop] = useState(3)
   const [animate, setAnimate] = useState(false)
@@ -37,6 +38,8 @@ export default function Home() {
         setGuide(`이제 ${delay}초간 눈을 감고 이완하세요.`)
       }, 10/speed*1000+50)
       setTimeout(()=>{
+        const audio = new Audio('/bell.wav');
+        audio.play();
         setGuide('글자가 더욱 선명하게 보이는지 확인하세요. 곧 새로운 단어로 시작됩니다.')
       }, delay*1000)
       setTimeout(()=>{
@@ -45,7 +48,7 @@ export default function Home() {
         setGuide('움직이는 점을 따라 눈동자를 이동하세요.')
         setCount(0);
         setAnimate(true);
-      }, delay*1000+8000)
+      }, delay*1000+10000)
       return;
     }
     setCount(count+1)
@@ -149,7 +152,7 @@ export default function Home() {
           <select value={delay} onChange={(event) => {
             setDelay(parseInt(event.currentTarget.value));
           }}>
-            {[1,2,3,4,5,6,7,8,9,10].map((each,idx)=> (
+            {[10,11,12,13,14,15,16,17,18,19,20].map((each,idx)=> (
               <option key={idx}>{each}</option>
             ))}
           </select>

@@ -54,7 +54,7 @@ export default function Home() {
     setCount(count+1)
 
     console.log(top, left, count, speed);
-    const dist = 314;
+    const dist = window.screen.width < 720 ? 157 : 314;
     let _top = top;
     let _left = left;
     if(count < loop*4){

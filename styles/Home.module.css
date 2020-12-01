@@ -33,7 +33,7 @@
 
 .header{
   position: absolute;
-  bottom:0; top:0; left:50px;
+  bottom:0; height:100%; left:50px;
   width:250px;
   text-align: center;
   display: flex;
@@ -56,4 +56,43 @@
 
 .footerItem {
   margin:40px 0;
+}
+
+
+@media screen and (max-width: 720px) {
+  .rect {
+    border: 3px solid #000;
+    width:160px;
+    height:160px;
+  }
+  .pointer {
+    background: rgb(26, 168, 26);
+    width:13px;
+    height:13px;
+    border-radius:12px;
+    position: absolute;
+    margin:-8px;
+    opacity: 0;
+  }
+  .header{
+    text-align: center;
+    bottom:0;  left:0; right:0;
+    height:100px; 
+    width:100%;
+  }
+  .footer {
+    position: absolute;
+    left:0; right:0; height:100px; 
+    z-index:100;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.3s;
+  }
+  .footerItem {
+    margin:0 10px;
+  }
+  
 }
